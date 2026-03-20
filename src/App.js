@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Cursor from "./components/Cursor";
+// import Cursor from "./components/Cursor";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className={`app ${loaded ? "loaded" : ""}`}>
-      <Cursor />
+      {/* <Cursor /> */}
       <Nav />
       <main>
         <Hero />
