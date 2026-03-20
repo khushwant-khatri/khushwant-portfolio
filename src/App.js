@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './App.css';
-import Cursor from './components/Cursor';
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Cursor from "./components/Cursor";
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -18,14 +18,16 @@ function App() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const elements = document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right"
+    );
     elements.forEach((el) => observer.observe(el));
 
     setTimeout(() => setLoaded(true), 100);
@@ -34,7 +36,7 @@ function App() {
   }, [loaded]);
 
   return (
-    <div className={`app ${loaded ? 'loaded' : ''}`}>
+    <div className={`app ${loaded ? "loaded" : ""}`}>
       <Cursor />
       <Nav />
       <main>

@@ -1,38 +1,38 @@
-import React, { useEffect, useRef } from 'react';
-import './Skills.css';
+import React, { useEffect, useRef } from "react";
+import "./Skills.css";
 
 const skillGroups = [
   {
-    category: 'Frontend',
-    icon: '⟨/⟩',
+    category: "Frontend",
+    icon: "⟨/⟩",
     skills: [
-      { name: 'React.js', level: 90 },
-      { name: 'Vue 3', level: 88 },
-      { name: 'JavaScript', level: 92 },
-      { name: 'TypeScript', level: 80 },
-      { name: 'HTML & CSS', level: 95 },
+      { name: "React.js", level: 90 },
+      { name: "Vue 3", level: 85 },
+      { name: "JavaScript", level: 80 },
+      { name: "TypeScript", level: 70 },
+      { name: "HTML & CSS", level: 95 },
     ],
   },
   {
-    category: 'State & Tools',
-    icon: '⚙',
+    category: "State & Tools",
+    icon: "⚙",
     skills: [
-      { name: 'Redux', level: 85 },
-      { name: 'Pinia', level: 82 },
-      { name: 'Git / GitHub', level: 88 },
-      { name: 'Postman', level: 78 },
-      { name: 'RESTful APIs', level: 87 },
+      { name: "Redux", level: 80 },
+      { name: "Pinia", level: 80 },
+      { name: "Git / GitHub", level: 80 },
+      { name: "Postman", level: 90 },
+      { name: "RESTful APIs", level: 90 },
     ],
   },
   {
-    category: 'UI Libraries',
-    icon: '✦',
+    category: "UI Libraries",
+    icon: "✦",
     skills: [
-      { name: 'Material UI', level: 85 },
-      { name: 'Element Plus', level: 88 },
-      { name: 'PrimeVue', level: 80 },
-      { name: 'ECharts', level: 82 },
-      { name: 'Responsive Design', level: 92 },
+      { name: "Material UI", level: 85 },
+      { name: "Element Plus", level: 85 },
+      { name: "PrimeVue", level: 70 },
+      { name: "ECharts", level: 80 },
+      { name: "Responsive Design", level: 90 },
     ],
   },
 ];
@@ -44,7 +44,7 @@ function SkillBar({ name, level }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.style.width = level + '%';
+          entry.target.style.width = level + "%";
         }
       },
       { threshold: 0.5 }
@@ -73,7 +73,7 @@ function Skills() {
       <div className="skills__container">
         <div className="skills__header reveal">
           <div className="section-label">
-            <span>// 02</span>
+            <span>{"// 02"}</span>
             <span>Skills</span>
           </div>
           <h2 className="skills__heading">
@@ -107,11 +107,28 @@ function Skills() {
         {/* Tags section */}
         <div className="skills__tags reveal">
           {[
-            'React.js', 'Vue 3', 'JavaScript', 'TypeScript', 'Redux', 'Pinia',
-            'ECharts', 'ApexCharts', 'Material UI', 'Element Plus', 'PrimeVue',
-            'Git', 'GitHub', 'GitLab', 'Postman', 'Agile', 'Asana', 'REST APIs',
+            "React.js",
+            "Vue 3",
+            "JavaScript",
+            "TypeScript",
+            "Redux",
+            "Pinia",
+            "ECharts",
+            "ApexCharts",
+            "Material UI",
+            "Element Plus",
+            "PrimeVue",
+            "Git",
+            "GitHub",
+            "GitLab",
+            "Postman",
+            "Agile",
+            "Asana",
+            "REST APIs",
           ].map((tag) => (
-            <span key={tag} className="skill-tag">{tag}</span>
+            <span key={tag} className="skill-tag">
+              {tag}
+            </span>
           ))}
         </div>
       </div>
