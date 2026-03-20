@@ -150,7 +150,6 @@ function Hero() {
           {[
             { num: "3+", label: "Years Exp" },
             { num: "2", label: "Companies" },
-            { num: "20%", label: "Perf Gains" },
           ].map((s) => (
             <div key={s.label} className="hero__stat">
               <span className="hero__stat-num">{s.num}</span>
