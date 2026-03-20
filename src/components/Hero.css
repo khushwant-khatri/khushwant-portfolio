@@ -20,9 +20,11 @@
 .hero__grid {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
   pointer-events: none;
@@ -39,7 +41,11 @@
 .hero__orb--1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(123, 108, 255, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(123, 108, 255, 0.15) 0%,
+    transparent 70%
+  );
   top: -100px;
   right: -100px;
 }
@@ -47,16 +53,27 @@
 .hero__orb--2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(232, 255, 71, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(232, 255, 71, 0.08) 0%,
+    transparent 70%
+  );
   bottom: 100px;
   left: 10%;
   animation-delay: -4s;
 }
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(20px, -30px) scale(1.05); }
-  66% { transform: translate(-15px, 20px) scale(0.95); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-15px, 20px) scale(0.95);
+  }
 }
 
 .hero__content {
@@ -97,15 +114,14 @@
 }
 
 .hero__name {
-  font-family: var(--font-display);
-  font-size: clamp(5rem, 12vw, 10rem);
+  font-size: clamp(5rem, 12vw, 6rem);
   line-height: 0.9;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 
 .hero__name-outline {
-  -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
   color: transparent;
   transition: color 0.3s ease;
 }
@@ -167,7 +183,7 @@
 }
 
 .hero__btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   transform: scaleX(0);
@@ -186,7 +202,7 @@
 }
 
 .hero__btn--primary::before {
-  background: rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .hero__btn--primary:hover {
@@ -217,7 +233,6 @@
 }
 
 .hero__stat-num {
-  font-family: var(--font-display);
   font-size: 2rem;
   color: var(--accent);
   letter-spacing: 0.02em;
@@ -251,10 +266,22 @@
 }
 
 @keyframes scroll-line {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 
 .hero__scroll span {

@@ -6,15 +6,19 @@
 
 .skills::before,
 .skills::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
-.skills::before { top: 0; }
-.skills::after { bottom: 0; }
+.skills::before {
+  top: 0;
+}
+.skills::after {
+  bottom: 0;
+}
 
 .skills__container {
   max-width: 1200px;
@@ -26,7 +30,6 @@
 }
 
 .skills__heading {
-  font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4rem);
   line-height: 1;
   margin-bottom: 1rem;
@@ -55,7 +58,7 @@
 }
 
 .skill-group::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -123,7 +126,7 @@
 
 .skill-item__track {
   height: 2px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 1px;
   overflow: hidden;
 }
