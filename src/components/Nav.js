@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './Nav.css';
+import React, { useEffect, useState } from "react";
+import "./Nav.css";
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -7,25 +7,38 @@ function Nav() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = ['About', 'Skills', 'Experience', 'Contact'];
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
+  const links = ["About", "Skills", "Experience", "Contact"];
 
   const scrollTo = (id) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById(id.toLowerCase())
+      ?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
   };
 
   return (
-    <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
-      <div className="nav__logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+    <nav className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
+      <div
+        className="nav__logo"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <span className="nav__logo-kk">KK</span>
         <span className="nav__logo-dot" />
       </div>
 
-      <ul className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`}>
+      <ul className={`nav__links ${menuOpen ? "nav__links--open" : ""}`}>
         {links.map((link) => (
           <li key={link}>
             <button onClick={() => scrollTo(link)} className="nav__link">
@@ -46,8 +59,13 @@ function Nav() {
         </li>
       </ul>
 
-      <button className={`nav__burger ${menuOpen ? 'nav__burger--open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
-        <span /><span /><span />
+      <button
+        className={`nav__burger ${menuOpen ? "nav__burger--open" : ""}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <span />
+        <span />
+        <span />
       </button>
     </nav>
   );
